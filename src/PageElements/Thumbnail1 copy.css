@@ -1,0 +1,131 @@
+/* Custom properties for easy modification */
+:root {
+  --thumbnail-width: 100%; /* Thumbnail width is now full width */
+  --thumbnail-hover-scale: 1.2;
+  --card-border-color: #ddd;
+  --card-border-radius: 10px;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --card-hover-scale: 1.05;
+  --card-background-color: #fff;
+  --card-text-color: #333;
+  --card-link-color: #007bff;
+  --card-link-hover-color: #0056b3;
+  --card-link-underline-color: #007bff;
+}
+
+/* Card container styling */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap onto multiple lines if needed */
+  gap: 20px; /* Space between cards */
+}
+
+.card {
+  flex: 1 1 calc(20% - 20px); /* Each card takes up approximately 20% of the container width minus the gap */
+  max-width: calc(20% - 20px); /* Ensure cards don’t exceed 20% of the container width */
+  box-sizing: border-box; /* Include padding and border in the element's width and height */
+  /* Optional styling for appearance */
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+
+/* Card hover effect */
+.card:hover {
+  transform: scale(var(--card-hover-scale)); /* Slight zoom */
+  box-shadow: var(--card-shadow-hover); /* Enhanced shadow */
+}
+
+/* Thumbnail styling */
+.thumbnail {
+  flex: 0 0 auto;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Thumbnail hover effect */
+.thumbnail img {
+  width: var(--thumbnail-width); /* Full width of the card */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail img:hover {
+  transform: scale(var(--thumbnail-hover-scale)); /* Zoom effect on image hover */
+}
+
+/* Card content */
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Card category */
+.card-category {
+  color: var(--card-link-color);
+  margin-bottom: 10px;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+/* Card date */
+.card-date {
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+/* Card text */
+.card-text {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: var(--card-text-color);
+}
+
+/* Card link */
+.card-link {
+  color: var(--card-link-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Card link hover effect */
+.card-link:hover {
+  color: var(--card-link-hover-color);
+  text-decoration: underline;
+}
+
+/* Card link hover underline effect */
+.card-link:after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--card-link-underline-color);
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.card-link:hover:after {
+  width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+  .card {
+    max-width: 45%; /* Adjust for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+}

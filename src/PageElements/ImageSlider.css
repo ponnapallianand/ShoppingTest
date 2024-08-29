@@ -1,0 +1,62 @@
+/* ImageSlider.css */
+.slider-container {
+    position: relative;
+    width: 100vw;
+    height: 40vh; /* 40% of viewport height */
+    overflow: hidden;
+  }
+  
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center;
+  }
+  
+  .slides {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    width: 100%;
+  }
+  
+  .slide {
+    flex: 0 0 100%; /* Each slide takes up 100% of the slider width */
+    height: 100%;
+  }
+  
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the area while maintaining aspect ratio */
+    object-position: top; /* Align image to the top */
+  }
+  
+  .navigation {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+  
+  .nav-button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-button.active {
+    background-color: #ffffff;
+  }
+  
+  .nav-button:hover {
+    background-color: #ffffff;
+  }
+  

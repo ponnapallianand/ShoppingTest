@@ -1,0 +1,120 @@
+/* Custom properties for easy modification */
+:root {
+  --thumbnail-width: 100%; /* Thumbnail width is now full width */
+  --thumbnail-hover-scale: 1.1;
+  --card-border-color: #ddd;
+  --card-border-radius: 10px;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --card-hover-scale: 1.05;
+  --card-background-color: #fff;
+  --card-text-color: #333;
+  --card-link-color: #007bff;
+  --card-link-hover-color: #0056b3;
+  --card-link-underline-color: #007bff;
+}
+
+/* Card container styling */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between cards */
+}
+
+/* Card styling */
+.card {
+  display: flex;
+  flex-direction: column; /* Stack thumbnail on top of content */
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--card-border-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  background-color: var(--card-background-color);
+  max-width: 350px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+  transform: scale(var(--card-hover-scale)); /* Slight zoom */
+  box-shadow: var(--card-shadow-hover); /* Enhanced shadow */
+}
+
+/* Thumbnail styling */
+.thumbnail {
+  flex: 0 0 auto;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+/* Thumbnail hover effect */
+.thumbnail img {
+  width: var(--thumbnail-width); /* Full width of the card */
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.thumbnail img:hover {
+  transform: scale(var(--thumbnail-hover-scale)); /* Zoom effect on image hover */
+}
+
+/* Card content */
+.card-content {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Card category */
+.card-category {
+  color: var(--card-link-color);
+  margin-bottom: 10px;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
+}
+
+/* Card date */
+.card-date {
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+
+/* Card text */
+.card-text {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: var(--card-text-color);
+}
+
+/* Card link */
+.card-link {
+  color: var(--card-link-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+/* Card link hover effect */
+.card-link:hover {
+  color: var(--card-link-hover-color);
+  text-decoration: underline;
+}
+
+/* Card link hover underline effect */
+.card-link:after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: var(--card-link-underline-color);
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.card-link:hover:after {
+  width: 100%;
+}

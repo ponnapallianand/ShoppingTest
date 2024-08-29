@@ -1,0 +1,105 @@
+
+/* Card container styling */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px; /* Space between cards */
+  }
+  
+  /* Card styling */
+  .card {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Card hover effect */
+  .card:hover {
+    transform: scale(1.05); /* Slight zoom */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  }
+  
+  /* Thumbnail styling */
+  .thumbnail {
+    flex: 0 0 450px; /* Fixed width for thumbnail */
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Thumbnail hover effect */
+  .thumbnail img {
+    width: 40%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  
+  .thumbnail img:hover {
+    transform: scale(2.1); /* Zoom effect on image hover */
+  }
+  
+  /* Card content */
+  .card-content {
+    padding: 20px;
+    flex-grow: 1;
+  }
+  
+  /* Card category */
+  .card-category {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  /* Card title */
+  .card-title {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Card date */
+  .card-date {
+    color: #6c757d;
+    margin-bottom: 10px;
+  }
+  
+  /* Card text */
+  .card-text {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Card link */
+  .card-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  /* Card link hover effect */
+  .card-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+  
+  /* Card link hover underline effect */
+  .card-link:after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #007bff;
+    width: 0;
+    transition: width 0.3s ease;
+  }
+  
+  .card-link:hover:after {
+    width: 100%;
+  }
+  
