@@ -21,7 +21,7 @@ function App() {
       <Navbar />
       <ImageSlider1 />
       <OffCanvas />
-      <Thumbnail1 />
+      {<Thumbnail1 />}
      {/*  <Blog /> */}
       {/* <Thumbnail /> */}
       {/* <NavList /> */}
